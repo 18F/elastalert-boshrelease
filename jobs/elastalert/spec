@@ -15,6 +15,11 @@ templates:
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 
+consumes:
+ - name: elasticsearch
+   type: elasticsearch
+   optional: true
+
 properties:
   elastalert.env.http_proxy:
     description: "HTTP proxy"
@@ -25,8 +30,10 @@ properties:
 
   elastalert.elasticsearch.host:
     description: "Elasticsearch hostname or IP address"
+    default: "127.0.0.1"
   elastalert.elasticsearch.port:
     description: "Elasticsearch port number"
+    default: 9200
   elastalert.run_every.minutes:
     description: "How often ElastAlert will query Elasticsearch"
   elastalert.buffer_time.minutes:
