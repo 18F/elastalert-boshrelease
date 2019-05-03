@@ -10,7 +10,7 @@ elastalert/v0.1.1.tar.gz:
   size: 122543
   object_id: 3af7c5e1-7b43-40ee-96e2-72aca87e6c1e
   sha: 507fa69b9c4c1d8319159a81b88714711adf3a4a
-python/Python-2.7.13.tgz:
-  size: 17076672
-  object_id: aaa0b959-2ad6-4d33-5241-ed3166585194
-  sha: dce2b862a30099ee48c19a7c34e2d7c2eeff5670
+python/Python-3.5.6.tgz:
+  size: 20763023
+  object_id: b82f50b6-ef2f-4d22-69af-d47d0592e104
+  sha: 4bbc89bfc9cfb0ec79f100bcba8a8f757ceb0d5b
