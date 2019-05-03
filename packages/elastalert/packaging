@@ -14,6 +14,8 @@ export C_INCLUDE_PATH=/var/vcap/packages/python/include:$C_INCLUDE_PATH
 # ubuntu update and install
 apt-get update
 apt-get install -y build-essential libffi-dev
+apt install python3-venv python3-pip
+
 
 # install elastalert
 pip install elastalert==0.1.39 --prefix $BOSH_INSTALL_TARGET
