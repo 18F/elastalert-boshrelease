@@ -11,18 +11,26 @@ export PATH=/var/vcap/packages/python/bin:$PATH
 export LD_LIBRARY_PATH=/var/vcap/packages/python/lib:$LD_LIBRARY_PATH
 export C_INCLUDE_PATH=/var/vcap/packages/python/include:$C_INCLUDE_PATH
 
+PYTHON_PACKAGE_PATH=python3
+BOSH_PACKAGE_PATH=/var/vcap/packages
+PYTHON_BIN_PATH=${BOSH_PACKAGE_PATH}/${PYTHON_PACKAGE_PATH}/bin
+PYTHON_LIB_PATH=${BOSH_PACKAGE_PATH}/${PYTHON_PACKAGE_PATH}/lib/python
+export PYTHONPATH=${PYTHON_LIB_PATH}
+# Install venv for pip and friends
+${PYTHON_BIN_PATH}/python3 -m venv ${BOSH_INSTALL_TARGET}/venv
+. ${BOSH_INSTALL_TARGET}/venv/bin/activate
+
 # ubuntu update and install
 apt-get update
 apt-get install -y build-essential libffi-dev
-apt install python3-venv python3-pip
 
 
 # install elastalert
-pip install elastalert==0.1.39 --prefix $BOSH_INSTALL_TARGET
+pip3 install elastalert==0.1.39 --prefix $BOSH_INSTALL_TARGET
 # Have to pin dateutil to a verion < 2.7.0 for current version of elastalert
 rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/python_dateutil*
 rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/urllib3*
 rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/elasticsearch*
-pip install "python-dateutil<2.7.0,>=2.1" --prefix $BOSH_INSTALL_TARGET
-pip install "urllib3<1.25,>=1.21.1" --prefix $BOSH_INSTALL_TARGET
-pip install elasticsearch==5.5.3
+pip3 install "python-dateutil<2.7.0,>=2.1" --prefix $BOSH_INSTALL_TARGET
+pip3 install "urllib3<1.25,>=1.21.1" --prefix $BOSH_INSTALL_TARGET
+pip3 install elasticsearch==5.5.3
