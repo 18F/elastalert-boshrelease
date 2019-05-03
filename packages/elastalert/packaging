@@ -20,17 +20,13 @@ export PYTHONPATH=${PYTHON_LIB_PATH}
 ${PYTHON_BIN_PATH}/python3 -m venv ${BOSH_INSTALL_TARGET}/venv
 . ${BOSH_INSTALL_TARGET}/venv/bin/activate
 
-# ubuntu update and install
-apt-get update
-apt-get install -y build-essential libffi-dev
-
 
 # install elastalert
 pip3 install elastalert==0.1.39 --prefix $BOSH_INSTALL_TARGET
 # Have to pin dateutil to a verion < 2.7.0 for current version of elastalert
-rm -rf ${PYTHON_LIB_PATH}/site-packages/python_dateutil*
-rm -rf ${PYTHON_LIB_PATH}/site-packages/urllib3*
-rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/elasticsearch*
+rm -rf ${PYTHON_LIB_PATH}/python3.7/site-packages/python_dateutil*
+rm -rf ${PYTHON_LIB_PATH}/python3.7/site-packages/urllib3*
+rm -rf ${PYTHON_LIB_PATH}/python3.7/site-packages/elasticsearch*
 pip3 install "python-dateutil<2.7.0,>=2.1" --prefix $BOSH_INSTALL_TARGET
 pip3 install "urllib3<1.25,>=1.21.1" --prefix $BOSH_INSTALL_TARGET
 pip3 install elasticsearch==5.5.3
