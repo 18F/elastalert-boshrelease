@@ -1,5 +1,5 @@
 ---
 name: elastalert
 dependencies:
-- python3
+- python
 files: []
