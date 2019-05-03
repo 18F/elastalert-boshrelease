@@ -2,4 +2,4 @@
 name: python
 
 files:
-- python/Python-2.7.13.tgz
+- python/Python-3.5.6.tgz
