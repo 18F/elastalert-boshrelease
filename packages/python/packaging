@@ -20,7 +20,7 @@ apt-get install -y build-essential \
                    uuid-dev
 
 echo "Extracting python..."
-tar xzvf Python-3.7.1.tgz
+tar xzvf python/Python-3.7.1.tgz
 
 echo "Building python..."
 pushd Python-3.7.1
