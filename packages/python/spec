@@ -1,5 +1,5 @@
 ---
-name: python
+name: python3
 
 files:
 - python/Python-3.7.1.tgz
