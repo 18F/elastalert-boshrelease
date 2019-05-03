@@ -2,9 +2,9 @@ set -eux
 
 CPUS=$(grep -c ^processor /proc/cpuinfo)
 
-tar xzf python/Python-2.7.13.tgz
+tar xzf python/Python-3.5.6.tgz
 
-pushd Python-2.7.13
+pushd Python-3.5.6
   ./configure \
     --prefix=${BOSH_INSTALL_TARGET} \
     --with-ensurepip \
