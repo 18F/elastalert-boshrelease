@@ -19,4 +19,6 @@ apt-get install -y build-essential libffi-dev
 pip install elastalert==0.1.29 --prefix $BOSH_INSTALL_TARGET
 # Have to pin dateutil to a verion < 2.7.0 for current version of elastalert
 rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/python_dateutil*
+rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/urllib3
 pip install "python-dateutil<2.7.0,>=2.1" --prefix $BOSH_INSTALL_TARGET
+pip install "urllib3<1.25,>=1.21.1" --prefix $BOSH_INSTALL_TARGET
