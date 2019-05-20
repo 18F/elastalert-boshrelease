@@ -22,5 +22,5 @@ rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/python_dateutil*
 rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/urllib3*
 rm -rf $BOSH_INSTALL_TARGET/lib/python2.7/site-packages/elasticsearch*
 pip install "python-dateutil<2.7.0,>=2.1" --prefix $BOSH_INSTALL_TARGET
-pip install "urllib3==1.22" --prefix $BOSH_INSTALL_TARGET
+pip install "urllib3==1.22" --prefix $BOSH_INSTALL_TARGET --force-reinstall
 pip install "elasticsearch==5.5.3" --prefix $BOSH_INSTALL_TARGET
